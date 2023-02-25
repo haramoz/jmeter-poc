@@ -18,7 +18,7 @@ class JmeterPocApplicationTests {
 	@Test
 	void testShowMenu(){
 		RestAssured.baseURI = "http://localhost";
-        RestAssured.port = 8081;
+        RestAssured.port = 8080;
 
         given()
           .when()
