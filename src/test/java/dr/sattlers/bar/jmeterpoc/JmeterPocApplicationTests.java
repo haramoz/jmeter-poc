@@ -25,7 +25,7 @@ class JmeterPocApplicationTests {
           .get("/menu")
           .then()
           .statusCode(200)
-          .body(equalTo("Food & Drinks!"));
+          .body(equalTo("[{\"item\":\"Food & Drinks\"},{\"item\":\"Pommes & Beers\"},{\"item\":\"Pasta & Limoncello\"}]"));
 	}
 
 }

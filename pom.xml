@@ -12,9 +12,10 @@
 	<groupId>dr.sattlers.bar</groupId>
 	<artifactId>jmeter-poc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>jmeter-poc</name>
 	<description>Jmeter demo for the springboot project</description>
+	<packaging>jar</packaging>
+
 	<properties>
 		<java.version>17</java.version>
         <xms>256</xms>
@@ -38,6 +39,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 
 		<!--dependency>

@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "2049bf5c-3129-457f-aa7d-34510ebf62a2",
+		"name": "JMeter-poc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2122853"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/menu",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 12345,\n    \"customerName\": \"John Doe\",\n    \"items\": [\n        {\n            \"product\": \"Beers\",\n            \"quantity\": 2\n        },\n        {\n            \"product\": \"Pommes\",\n            \"quantity\": 3\n        }\n    ],\n    \"total\": 25.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

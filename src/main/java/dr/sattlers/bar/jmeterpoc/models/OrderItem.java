@@ -1,5 +1,8 @@
 package dr.sattlers.bar.jmeterpoc.models;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "order_item")
 public class OrderItem {
     private String product;
     private int quantity;
