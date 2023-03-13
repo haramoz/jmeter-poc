@@ -1,6 +1,7 @@
 package dr.sattlers.bar.jmeterpoc;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import io.restassured.RestAssured;
@@ -10,6 +11,11 @@ import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class JmeterPocApplicationTests {
+  @Value("${server.port}")
+  int port;
+
+  @Value("${server.host}")
+  String host;
 
 	@Test
 	void contextLoads() {
@@ -17,8 +23,8 @@ class JmeterPocApplicationTests {
 
 	@Test
 	void testShowMenu(){
-		RestAssured.baseURI = "http://localhost";
-        RestAssured.port = 8080;
+		RestAssured.baseURI = host;
+        RestAssured.port = port;
 
         given()
           .when()

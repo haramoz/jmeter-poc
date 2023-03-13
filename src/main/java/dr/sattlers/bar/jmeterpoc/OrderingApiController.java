@@ -1,5 +1,6 @@
 package dr.sattlers.bar.jmeterpoc;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import dr.sattlers.bar.jmeterpoc.exception.BarException;
 import dr.sattlers.bar.jmeterpoc.models.Menu;
 import dr.sattlers.bar.jmeterpoc.models.Order;
 import dr.sattlers.bar.jmeterpoc.services.OrderingApiServices;
@@ -26,19 +28,34 @@ public class OrderingApiController {
 
     @GetMapping("/menu")
     public ResponseEntity<List<Menu>> showMenu() {
-        // var menu = menuRepository.findAll();
-        List<Menu> menu = orderingApiServices.getMenu();
-        return ResponseEntity.ok(menu);
+        try{
+            List<Menu> menu = orderingApiServices.getMenu();
+            return ResponseEntity.ok(menu);
+        }
+        catch (BarException e) {
+            String errorMessage = "Error getting menu: " + e.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                             .body(Collections.singletonList(new Menu(errorMessage)));
+        }
+        
     }
 
     @PostMapping("/order")
     public ResponseEntity<String> createOrder(@RequestBody Order order) {
         
-        if(OrderingApiServices.orderCreated(order)) {
-            return new ResponseEntity<>("Order created successfully", HttpStatus.CREATED);
-        }
-
-        /* TODO: process failure correctly */ 
+        try {
+            if (OrderingApiServices.orderCreated(order)) {
+                return new ResponseEntity<>("Order created successfully", HttpStatus.CREATED);
+            }
+        } catch (BarException e) {
+            String errorMessage = "Error creating order: " + e.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body(errorMessage);
+        } catch (Exception e) {
+            String errorMessage = "Unexpected error creating order: " + e.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body(errorMessage);
+        }   
         return new ResponseEntity<>("Order creation failed", HttpStatus.BAD_REQUEST); 
         
     }
