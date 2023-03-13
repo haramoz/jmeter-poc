@@ -20,6 +20,7 @@ Die Ergebnisse der jmeter-Tests befinden sich standardmäßig im Pfad "/target/j
 <pre>
 mvn clean package
 mvn spring-boot:run 
+docker-compose up (for database)
 mvn jmeter:jmeter (Neue bash)</pre>
 
 ### Finishing touch
