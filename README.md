@@ -33,3 +33,6 @@ Junit mockito test cases
 
 Useful tool for working with mongodb:
 [mongodb_compass](https://www.mongodb.com/try/download/compass)
+
+Martin comments:
+Also load testing, ramp up functionality, also very cool resource need projection.
