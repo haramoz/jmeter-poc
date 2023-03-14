@@ -23,7 +23,7 @@ public class GraphqlController {
 
     public GraphqlController(MenuResolver menuResolver) {
             TypeDefinitionRegistry typeRegistry = new TypeDefinitionRegistry();
-            typeRegistry.merge(new SchemaParser().parse("type Query { menuContainsPork(itemName: String): Boolean }"));
+            typeRegistry.merge(new SchemaParser().parse("type Query{menuContainsPork(itemName:String):Boolean}"));
     
             RuntimeWiring wiring = RuntimeWiring.newRuntimeWiring()
                     .type("Query", builder -> builder.dataFetcher("menuContainsPork",
