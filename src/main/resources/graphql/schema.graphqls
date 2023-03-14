@@ -1,0 +1,11 @@
+type Menu {
+  item: String!
+  description: String!
+  ingredients: [String!]!
+  spicyLevel: String!
+  containsPork(itemName: String!): Boolean!
+}
+
+type Query {
+  menu: [Menu!]!
+}

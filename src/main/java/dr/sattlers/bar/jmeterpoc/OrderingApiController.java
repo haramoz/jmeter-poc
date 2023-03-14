@@ -33,9 +33,8 @@ public class OrderingApiController {
             return ResponseEntity.ok(menu);
         }
         catch (BarException e) {
-            String errorMessage = "Error getting menu: " + e.getMessage();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                             .body(Collections.singletonList(new Menu(errorMessage)));
+                             .body(Collections.emptyList());
         }
         
     }
