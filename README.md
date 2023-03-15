@@ -23,6 +23,13 @@ mvn spring-boot:run
 docker-compose up (for database)
 mvn jmeter:jmeter (Neue bash)</pre>
 
+
+or 
+
+<pre>
+docker-compose up
+mvn jmeter:jmeter (New bash)</pre>
+
 ### Finishing touch
 Add swagger api contract 
 Junit mockito test cases
