@@ -5,9 +5,10 @@ Also its a opportunity to increase the MongoDB complexity to create potential bo
 
 So todos as follows
 
-- Graphql api -> Does this have pork in it (menu:menuid)?
+- Graphql api -> Does this have pork in it (menu:menuid) -- Done
 - MongoDB MongoDB Lookup Aggregation implementation
-- Dockerize whole app
+- Dockerize whole app -- Done 
 - Create a pipeline
 - Add more JMETER test cases
 - Add JMETER results listeners
+- Debug the Dockerized app not connecting with database
