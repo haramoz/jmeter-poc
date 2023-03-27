@@ -1,14 +1,11 @@
 Hi Mehmet & World,
 
-I have decided to also add a Graphql component in our project and ofcourse swagger api. I have to decide what comes first.
-Also its a opportunity to increase the MongoDB complexity to create potential bottlenecks for load tesing. With a Rest Get Api its too easy.
-
 So todos as follows
 
-- Graphql api -> Does this have pork in it (menu:menuid) -- Done
 - MongoDB MongoDB Lookup Aggregation implementation
 - Dockerize whole app -- Done 
 - Create a pipeline
 - Add more JMETER test cases
 - Add JMETER results listeners
 - Debug the Dockerized app not connecting with database
+- Improve the test cases with mockito
