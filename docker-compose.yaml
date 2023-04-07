@@ -20,7 +20,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_DATA_MONGODB_HOST=mymongodb
+      #- SPRING_DATA_MONGODB_HOST=mymongodb
       - SPRING_DATA_MONGODB_PORT=27017   
       - SPRING_DATA_MONGODB_DATABASE=mydb    
       - SPRING_DATA_MONGODB_USERNAME=admin    
