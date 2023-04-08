@@ -11,6 +11,8 @@ services:
       - ../src/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro     
     ports:
       - 27017:27017
+    networks:
+      - jmeter-app-network
 
   backend:
     container_name: "backend"
@@ -21,6 +23,10 @@ services:
       - "8080:8080"
     environment:
       - SPRING_DATA_MONGODB_URI:mongodb://admin:admin@mongodb:27017/mydb?authSource=admin
-
     depends_on:
       - mymongodb
+    networks:
+      - jmeter-app-network
+networks:
+    jmeter-app-network:
+        driver: bridge

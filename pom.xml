@@ -73,92 +73,13 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<groupId>com.lazerycode.jmeter</groupId>
-				<artifactId>jmeter-maven-plugin</artifactId>
-				<version>3.6.0</version>
-                <executions>
-                    <!-- Generate JMeter configuration -->
-                    <execution>
-						<id>configuration</id>
-						<goals>
-							<goal>configure</goal>
-						</goals>
-					</execution>
-                    <!-- Run JMeter tests -->
-                    <execution>
-                        <id>jmeter-tests</id>
-                        <goals>
-                            <goal>jmeter</goal>
-                        </goals>
-                    </execution>
-                    <!-- Fail build on errors in test -->
-                    <execution>
-                        <id>jmeter-check-results</id>
-                        <goals>
-                            <goal>results</goal>
-                        </goals>
-                    </execution>
-                </executions>
-				<!--configuration>
-					<testFilesDirectory>${project.basedir}/src/main/resources</testFilesDirectory>
-					<resultsDirectory>${project.basedir}/src/main/resources</resultsDirectory>
-				</configuration-->
-				<configuration>
-                    <propertiesUser>
-                        <loops>${loops}</loops>
-                    </propertiesUser>
-                    <jMeterProcessJVMSettings>
-                        <xms>${xms}</xms>
-                        <xmx>${xmx}</xmx>
-                    </jMeterProcessJVMSettings>
-                    <overrideRootLogLevel>${LogLevel}</overrideRootLogLevel>
-                    <propertiesFilesDirectory>src/test/jmeter/props/${env}</propertiesFilesDirectory>
-                </configuration>
-			</plugin>
-		</plugins>
-	</build>
-	<repositories>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</pluginRepository>
-	</pluginRepositories>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <finalName>jmeter-app</finalName>
+    </build>
 
 </project>
