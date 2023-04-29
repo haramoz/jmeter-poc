@@ -7,16 +7,16 @@ Mehmet @mehmetmgrsl
 Arka @haramoz
 
 ## Jmeter Maven Plugin
-Dieses Jmeter Maven Plugin ermöglicht es uns, einen Leistungstest als Teil des Build-Prozesses durchzuführen. Für die Einrichtung der Schritte besuchen Sie bitte [link](https://github.com/jmeter-maven-plugin/jmeter-maven-plugin )
+This Jmeter Maven plugin allows us to perform a performance test as part of the build process. To set up the steps, please visit [link](https://github.com/jmeter-maven-plugin/jmeter-maven-plugin )
 
 ### JMeter Tests
-Die test Files werden standardmäßig im Pfad "src/test/jmeter" abgelegt.
+By default, the test files are stored in the path "src/test/jmeter".
 
-### Ergebnisse des Leistungstests
+### Result of the performance testing
 
-Die Ergebnisse der jmeter-Tests befinden sich standardmäßig im Pfad "/target/jmeter/results". Standardmäßig handelt es sich um eine .csv-Datei, eine andere Ergebnisausgabe kann angegeben/konfiguriert werden
+By default, the results of the jmeter tests are located in the path "/target/jmeter/results". By default it is a .csv file, a different result output can be specified/configured
 
-## Schritte zur Ausführung des Leistungstests
+## Steps for the performance test
 <pre>
 mvn clean package
 mvn spring-boot:run 
